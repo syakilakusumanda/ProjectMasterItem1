@@ -5,36 +5,36 @@ import (
 	"ProjectMasterItem/Node"
 )
 
-func InsertMember(id int, nama string, alamat string, point float32) {
-	newDataMember := Node.TableMember{
-		Data: Node.Member{id, nama, alamat, point},
+func InsertItem(id int, nama string, alamat string, point float32) {
+	newDataItem := Node.TableItem{
+		Data: Node.Item{id, nama, alamat, point},
 		Next: nil,
 	}
-	var tempLL *Node.TableMember
-	tempLL = &Database.DBmember
-	if Database.DBmember.Next == nil {
-		Database.DBmember.Next = &newDataMember
-	} else {
+	var tempLL *Node.TableItem
+	tempLL = &Database.DBitem
+	if Database.DBitem.Next == nil {
+		Database.DBitem.Next = &newDataItem
+	} else 
 		for tempLL.Next != nil {
 			tempLL = tempLL.Next
 		}
-		tempLL.Next = &newDataMember
+		tempLL.Next = &newDataItem
 	}
 }
 
-func ReadAllMember() *Node.TableMember {
-	var tempLL *Node.TableMember
-	tempLL = &Database.DBmember
-	if Database.DBmember.Next == nil {
+func ReadAllItem() *Node.TableItem {
+	var tempLL *Node.TableItem
+	tempLL = &Database.DBitem
+	if Database.DBitem.Next == nil {
 		return nil
 	} else {
 		return tempLL
 	}
 }
 
-func DeleteMember(id int) bool {
-	var tempLL *Node.TableMember
-	tempLL = &Database.DBmember
+func DeleteItem(id int) bool {
+	var tempLL *Node.TableItem
+	tempLL = &Database.DBitem
 	if tempLL.Next == nil {
 		return false
 	} else {
@@ -49,11 +49,11 @@ func DeleteMember(id int) bool {
 	}
 }
 
-func SearchMember(id int) *Node.TableMember {
-	var tempLL *Node.TableMember
-	tempLL = Database.DBmember.Next
+func SearchItem(id int) *Node.TableItem {
+	var tempLL *Node.TableItem
+	tempLL = Database.DBitem.Next
 	cek := false
-	if Database.DBmember.Next == nil {
+	if Database.DBitem.Next == nil {
 		return nil
 	} else {
 		for tempLL != nil {
@@ -70,13 +70,13 @@ func SearchMember(id int) *Node.TableMember {
 	return nil
 }
 
-func UpdateMember(member Node.Member) bool {
-	addr := SearchMember(member.Id)
+func UpdateItem(item Node.Item) bool {
+	addr := SearchItem(item.Id)
 	if addr == nil {
 		return false
 	} else {
-		addr.Data.Nama = member.Nama
-		addr.Data.Alamat = member.Alamat
+		addr.Data.Nama = item.Nama
+		addr.Data.Alamat = item.Alamat
 		return true
 	}
 }
