@@ -5,9 +5,9 @@ import (
 	"ProjectMasterItem/Node"
 )
 
-func InsertItem(id int, nama string, alamat string, point float32) {
+func InsertItem(id int, nama string, stok int, harga int) {
 	newDataItem := Node.TableItem{
-		Data: Node.Item{id, nama, alamat, point},
+		Data: Node.Item{id, nama, stok, harga},
 		Next: nil,
 	}
 	var tempLL *Node.TableItem
@@ -76,7 +76,6 @@ func UpdateItem(item Node.Item) bool {
 		return false
 	} else {
 		addr.Data.Nama = item.Nama
-		addr.Data.Alamat = item.Alamat
 		return true
 	}
 }
