@@ -8,11 +8,11 @@ import (
 func menu() {
 	for {
 		fmt.Println("Menu Program")
-		fmt.Println("1. Insert Member")
-		fmt.Println("2. Update Member")
-		fmt.Println("3. Delete Member")
-		fmt.Println("4. Read All Member")
-		fmt.Println("5. Search Member")
+		fmt.Println("1. Insert Item")
+		fmt.Println("2. Update Item")
+		fmt.Println("3. Delete Item")
+		fmt.Println("4. Read All Item")
+		fmt.Println("5. Search Item")
 		fmt.Println("6. Exit")
 		fmt.Println("----------------")
 		fmt.Print("masukkan menu pilihan anda: ")
@@ -22,15 +22,15 @@ func menu() {
 
 		switch choice {
 		case 1:
-			View.InsertMember()
+			View.InsertItem()
 		case 2:
-			//updateMember()
+			//updateItem()
 		case 3:
-			//deleteMember()
+			//deleteItem()
 		case 4:
-			View.ReadAllMember()
+			View.ReadAllItem()
 		case 5:
-			//searchMember()
+			//searchItem()
 		case 6:
 			fmt.Println("exit program")
 			return
