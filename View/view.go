@@ -6,18 +6,17 @@ import (
 )
 
 func InsertItem() {
-	var id int
-	var nama, alamat string
-	var point float32
-	fmt.Print("masukkan id item : ")
+	var id, stok, harga int
+	var nama string
+	fmt.Print("input id item : ")
 	fmt.Scan(&id)
-	fmt.Print("masukkan nama item : ")
+	fmt.Print("input nama item : ")
 	fmt.Scan(&nama)
-	fmt.Print("masukkan alamat item : ")
+	fmt.Print("input stok item : ")
 	fmt.Scan(&alamat)
-	fmt.Print("masukkan point item : ")
+	fmt.Print("input harga item : ")
 	fmt.Scan(&point)
-	cek := Controller.InsertItem(id, nama, alamat, point)
+	cek := Controller.InsertItem(id, nama, stok, harga)
 	if cek == true {
 		fmt.Println("data berhasil di input")
 	} else {
@@ -31,7 +30,7 @@ func ReadAllItem() {
 		for items.Next != nil {
 			fmt.Println("Nama Item : ", items.Next.Data.Nama)
 			fmt.Println("Id Item : ", items.Next.Data.Id)
-			fmt.Println("Alamat Item : ", items.Next.Data.Alamat)
+			fmt.Println("Stok Item : ", items.Next.Data.Alamat)
 			items = items.Next
 		}
 	}
