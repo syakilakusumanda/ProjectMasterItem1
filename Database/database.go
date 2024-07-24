@@ -4,4 +4,4 @@ import (
 	"ProjectMasterItem/Node"
 )
 
-var DBmember Node.TableMember
+var DBitem Node.TableItem
