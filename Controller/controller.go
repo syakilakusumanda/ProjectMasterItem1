@@ -5,9 +5,9 @@ import (
 	"ProjectMasterItem/Node"
 )
 
-func InsertItem(id int, nama string, alamat string, point float32) bool {
+func InsertItem(id int, nama string, stok int, harga int) bool {
 	if id > 0 && nama != "" {
-		Model.InsertItem(id, nama, alamat, point)
+		Model.InsertItem(id, nama, stok, harga)
 		return true
 	} else {
 		return false
