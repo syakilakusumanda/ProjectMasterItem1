@@ -3,8 +3,8 @@ package Node
 type Item struct {
 	Id     int
 	Nama   string
-	Alamat string
-	Point  float32
+	Stok   int
+	Harga  int
 }
 
 type TableItem struct {
