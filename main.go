@@ -15,7 +15,7 @@ func menu() {
 		fmt.Println("5. Search Item")
 		fmt.Println("6. Exit")
 		fmt.Println("----------------")
-		fmt.Print("masukkan menu pilihan anda: ")
+		fmt.Print("Input menu pilihan anda: ")
 
 		var choice int
 		fmt.Scanln(&choice)
