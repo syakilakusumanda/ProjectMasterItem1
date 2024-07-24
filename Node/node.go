@@ -1,13 +1,13 @@
 package Node
 
-type Member struct {
+type Item struct {
 	Id     int
 	Nama   string
 	Alamat string
 	Point  float32
 }
 
-type TableMember struct {
-	Data Member
-	Next *TableMember
+type TableItem struct {
+	Data Item
+	Next *TableItem
 }
